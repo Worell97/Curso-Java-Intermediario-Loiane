@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package curso.java.intermediario.Aula01;
+package curso.java.intermediario.Aula53;
 
 /**
  *
@@ -10,7 +10,9 @@ package curso.java.intermediario.Aula01;
  */
 public class Teste {
     public static void main(String[] args) {
-        
+        usandoConstantes();
+        System.out.println();
+        usandoEnum();
     }
     
     private static void usandoConstantes(){
@@ -32,7 +34,7 @@ public class Teste {
         imprimeDiaSemana(domingo);
     }
     
-    public static void imprimeDiaSemana(int dia){
+    private static void imprimeDiaSemana(int dia){
         switch (dia) {
             case 1:
                 System.out.println("Segunda");
@@ -58,5 +60,52 @@ public class Teste {
             default:
                 throw new AssertionError();
         }
+    } 
+    
+    private static void imprimeDiaSemana(DiaSemana dia){
+        switch (dia) {
+            case SEGUNDA:
+                System.out.println("Segunda");
+                break;
+            case TERCA:
+                System.out.println("Terça");
+                break;
+            case QUARTA:
+                System.out.println("Quarta");
+                break;
+            case QUINTA:
+                System.out.println("Quinta");
+                break;
+            case SEXTA:
+                System.out.println("Sexta");
+                break;
+            case SABADO:
+                System.out.println("Sabado");
+                break;
+            case DOMINGO:
+                System.out.println("Domingo");
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+    
+    private static void usandoEnum(){
+        DiaSemana segunda = DiaSemana.SEGUNDA;
+        DiaSemana terca = DiaSemana.TERCA;
+        DiaSemana quarta = DiaSemana.QUARTA;
+        DiaSemana quinta = DiaSemana.QUINTA;
+        DiaSemana sexta = DiaSemana.SEXTA;
+        DiaSemana sabado = DiaSemana.SABADO;
+        DiaSemana domingo = DiaSemana.DOMINGO;
+        
+        System.out.println("Teste utilizando EEnum no Java");   
+        imprimeDiaSemana(segunda);
+        imprimeDiaSemana(terca);
+        imprimeDiaSemana(quarta);
+        imprimeDiaSemana(quinta);
+        imprimeDiaSemana(sexta);
+        imprimeDiaSemana(sabado);
+        imprimeDiaSemana(domingo);
     }
 }
